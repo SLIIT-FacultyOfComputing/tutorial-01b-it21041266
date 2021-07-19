@@ -13,7 +13,25 @@ sum = 1+2+3+...+10 = 55 */
 
 #include <stdio.h>
 int main() {
-  
-  return 0;
+  int num,tot;
+
+  printf("Calculate the total of numbers from 1 to n\n");
+  printf("Enter the last no of rate starting from 1 :");
+  scanf("%d",&num);
+
+  tot=SumRange(num);
+  printf("The total of num from 1 to %d:%d\n",num,tot);return 0;
+
+  int SumRange(int num){
+    int no;
+    if(num==1){
+      return(1);
+      
+    }
+    else{
+      no = num+SumRange(num-1);
+    }
+    return(no);
+  }
 }
 
